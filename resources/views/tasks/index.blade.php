@@ -23,14 +23,14 @@
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
                     <td>
-                        <button class="btn-link" href="/task/{{$task->id}}/edit"> Editar  </button>
+                        <a class="btn btn-primary btn-sm" href="/task/{{$task->id}}/edit"> <i class="glyphicon glyphicon-pencil"></i> Editar</a>
                         {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                            {!! Form::submit('Excluir', array('class'=>'btn-link')) !!}
+                            {!! Form::submit('Excluir', array('class'=>'btn btn-danger btn-sm')) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
         </tbody>
-        <td><a class="btn-link" href="/task/create"> Adicionar nova tarefa</a></td>
+        <td><a class="btn btn-success" href="/task/create"><i class="glyphicon glyphicon-plus"></i> Adicionar nova tarefa</a></td>
     </table>
 @endsection
