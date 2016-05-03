@@ -12,7 +12,7 @@
             {!! Form::label('description', 'Descrição') !!}
             {!! Form::textarea('description', null, array('class'=>'form-control')) !!}
             {!! Form::label('status', 'Status') !!}
-            {!! Form::select('status', array( 'A fazer' => 'A fazer', 'Fazendo' => 'Fazendo', 'Feita' => 'Feita' )) !!}
+            {!! Form::select('status', array( 'A fazer' => 'A fazer', 'Fazendo' => 'Fazendo', 'Feita' => 'Feita'), null, array('class'=>'form-control')) !!}
             <br>
             {!! Form::submit('Adicionar Tarefa', array('class'=>'btn btn-sucess btn-lg btn-block')) !!}
             {!! Form::close() !!}
