@@ -18,10 +18,10 @@
                     <td> {!! $task->title !!}</td>
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
-                    <td> Editar | Excluir </td>
+                    <td><a class="btn-default" href="/task/{{$task->id}}/edit"> Editar  </a> | <a class="btn-default" href="/task/{{$task->id}}"> Excluir </a></td>
                 </tr>
             @endforeach
         </tbody>
-        <td><a class="glyphicon-link" href="/task/create"> Adicionar nova tarefa</a></td>
+        <td><a class="btn-default" href="/task/create"> Adicionar nova tarefa</a></td>
     </table>
 @endsection

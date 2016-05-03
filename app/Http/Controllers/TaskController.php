@@ -75,8 +75,10 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        return view('tasks.edit', compact('task'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -87,7 +89,19 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validação
+        // Validação
+        $this->validate($request, array(
+            'title' => 'required|max:60',
+            'description' => 'required|max:255'
+        ));
+
+        $task = Task::find($id);
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->status = $request->status;
+        $task->save();
+        return redirect('task');
     }
 
     /**
