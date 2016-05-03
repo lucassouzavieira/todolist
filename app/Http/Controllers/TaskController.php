@@ -67,6 +67,11 @@ class TaskController extends Controller
 
     }
 
+    public function delete($id)
+    {
+        return view('tasks.delete', compact($id));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -112,6 +117,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::find($id);
+        $task->delete();
+        return redirect('task');
     }
 }

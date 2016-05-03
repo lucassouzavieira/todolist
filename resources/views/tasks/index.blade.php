@@ -18,7 +18,12 @@
                     <td> {!! $task->title !!}</td>
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
-                    <td><a class="btn-default" href="/task/{{$task->id}}/edit"> Editar  </a> | <a class="btn-default" href="/task/{{$task->id}}"> Excluir </a></td>
+                    <td>
+                        <a class="btn-default" href="/task/{{$task->id}}/edit"> Editar  </a>
+                        {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
+                        <a class="btn-default">{!! Form::submit('Excluir Tarefa') !!} </a>
+                        {!! Form::close() !!}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
