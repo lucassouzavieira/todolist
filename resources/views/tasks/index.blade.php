@@ -22,5 +22,6 @@
                 </tr>
             @endforeach
         </tbody>
+        <td><a class="glyphicon-link" href="/task/create"> Adicionar nova tarefa</a></td>
     </table>
 @endsection

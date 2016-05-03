@@ -12,17 +12,18 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">TaskList</a>
+            <a class="navbar-brand" href="/task">TaskList</a>
         </div>
         <ul class="nav navbar-nav">
-
+            <a class="nav navbar-brand" href="/task"> Lista de Tarefas </a>
+            <a class="nav navbar-brand" href="/task/create">Nova Tarefa</a>
         </ul>
     </div>
 </nav>
 <div class="container">
     @yield('content')
 </div>
-<footer class="modal-footer">
+<footer class="modal-footer" style="text-align: justify">
     <address>Rua Caxias, S/N. Cidade Operária - São Luís - Maranhão</address>
     <p>Developed by Lucas Souza</p>
 </footer>
