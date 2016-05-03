@@ -15,18 +15,22 @@
         <tbody>
             @foreach($tasks as $task)
                 <tr>
-                    <td> {!! $task->title !!}</td>
+                    <td>
+                        {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'GET')) !!}
+                             {!! Form::submit($task->title, array('class'=>'btn-link')) !!}
+                        {!! Form::close() !!}
+                    </td>
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
                     <td>
-                        <a class="btn-default" href="/task/{{$task->id}}/edit"> Editar  </a>
+                        <button class="btn-link" href="/task/{{$task->id}}/edit"> Editar  </button>
                         {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                        <a class="btn-default">{!! Form::submit('Excluir Tarefa') !!} </a>
+                            {!! Form::submit('Excluir', array('class'=>'btn-link')) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
         </tbody>
-        <td><a class="btn-default" href="/task/create"> Adicionar nova tarefa</a></td>
+        <td><a class="btn-link" href="/task/create"> Adicionar nova tarefa</a></td>
     </table>
 @endsection

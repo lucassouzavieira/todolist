@@ -9,23 +9,36 @@
     {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js') }}
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="/task">TaskList</a>
         </div>
-        <ul class="nav navbar-nav">
-            <a class="nav navbar-brand" href="/task"> Lista de Tarefas </a>
-            <a class="nav navbar-brand" href="/task/create">Nova Tarefa</a>
-        </ul>
-    </div>
-</nav>
-<div class="container">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="task/create">Nova Tarefa</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav><div class="container">
     @yield('content')
 </div>
-<footer class="modal-footer" style="text-align: justify">
-    <address>Rua Caxias, S/N. Cidade Operária - São Luís - Maranhão</address>
-    <p>Developed by Lucas Souza</p>
+<footer class="footer" style="text-align: justify">
+    <br><br>
+    <div class="container">
+        <address class="text-muted">Rua Caxias, S/N. Cidade Operária - São Luís - Maranhão</address>
+        <p class="text-muted">Developed by Lucas Souza</p>
+    </div>
 </footer>
 </body>
 </html>

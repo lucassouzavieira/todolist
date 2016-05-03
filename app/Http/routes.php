@@ -14,4 +14,3 @@
 Route::get('/', 'TaskController@index');
 
 Route::resource('task', 'TaskController');
-Route::get('task/{$task}/delete', 'TaskController@delete');
