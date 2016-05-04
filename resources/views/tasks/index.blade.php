@@ -23,9 +23,9 @@
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/task/{{$task->id}}/edit"> <i class="glyphicon glyphicon-pencil"></i> Editar</a>
+                        <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"></i>  Editar</a>
                         {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                            {!! Form::submit('Excluir', array('class'=>'btn btn-danger btn-sm')) !!}
+                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i> Excluir', ['class'=>'btn btn-danger', 'role'=>'button', 'type'=>'submmit']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>
