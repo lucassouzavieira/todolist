@@ -8,7 +8,9 @@
     {{ HTML::style('src/css/sweetalert.css') }}
     {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}
     {{ HTML::script('http://code.jquery.com/jquery-2.2.3.js') }}
+    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
     {{ HTML::script('src/js/sweetalert.min.js') }}
+    {{ HTML::script('src/js/todo.list.functions.js') }}
 </head>
 <body>
 <nav class="navbar navbar-default">
