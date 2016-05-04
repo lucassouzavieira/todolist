@@ -99,7 +99,7 @@ class TaskController extends Controller
         // Validação
         $this->validate($request, array(
             'title' => 'required|max:60',
-            'description' => 'required|max:255'
+            'description' => 'required|min:5'
         ));
 
         $task = Task::find($id);

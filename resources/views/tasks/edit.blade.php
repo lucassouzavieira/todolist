@@ -16,7 +16,7 @@
             {!! Form::label('status', 'Status') !!}
             {!! Form::select('status', array( 'A fazer' => 'A fazer', 'Fazendo' => 'Fazendo', 'Feita' => 'Feita' ), $task->status, array('class'=>'form-control')) !!}
             <br>
-            {!! Form::submit('Salvar Tarefa', array('class'=>'btn btn-sucess btn-lg btn-block')) !!}
+            {!! Form::button('<i class="glyphicon glyphicon-plus"></i> Salvar Tarefa', ['class'=>'btn btn-success', 'role'=>'button', 'type'=>'submit']) !!}</a>
             {!! Form::close() !!}
         </div>
     </div>

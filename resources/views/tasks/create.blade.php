@@ -14,7 +14,7 @@
             {!! Form::label('status', 'Status') !!}
             {!! Form::select('status', array( 'A fazer' => 'A fazer', 'Fazendo' => 'Fazendo', 'Feita' => 'Feita'), null, array('class'=>'form-control')) !!}
             <br>
-            {!! Form::submit('Adicionar Tarefa', array('class'=>'btn btn-sucess btn-lg btn-block')) !!}
+            {!! Form::button('<i class="glyphicon glyphicon-plus"></i> Adicionar tarefa', ['class'=>'btn btn-success', 'role'=>'button', 'type'=>'submmit']) !!}</a>
             {!! Form::close() !!}
         </div>
     </div>

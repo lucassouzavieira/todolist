@@ -42,11 +42,17 @@
                         {!! Form::close() !!}
                     </td>
                     <td> {!! $task->description !!}</td>
-                    <td> {!! $task->status !!}</td>
+                    <td>
+                        @if($task->status  == "Feita")
+                            {!! Form::checkbox('status', 'Feita', true, ['class'=>'form-control', 'disabled'=>'disabled']) !!}
+                        @else
+                            {!! Form::checkbox('status', 'Fazendo', false, ['class'=>'form-control', 'disabled'=>'disabled']) !!}
+                        @endif
+                    </td>
                     <td>
                         <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"> </i> Editar</a>
                         {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i>Excluir', ['class'=>'btn btn-danger', 'role'=>'button', 'onsubmit'=>'confirm()','type'=>'submmit']) !!}
+                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i>Excluir', ['class'=>'btn btn-danger', 'role'=>'button', 'onsubmit'=>'confirm()','type'=>'submit']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>

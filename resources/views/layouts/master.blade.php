@@ -7,7 +7,7 @@
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') }}
     {{ HTML::style('src/css/sweetalert.css') }}
     {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}
-    {{ HTML::script('src/js/jquery-2.2.3.min.js') }}
+    {{ HTML::script('http://code.jquery.com/jquery-2.2.3.js') }}
     {{ HTML::script('src/js/sweetalert.min.js') }}
 </head>
 <body>
