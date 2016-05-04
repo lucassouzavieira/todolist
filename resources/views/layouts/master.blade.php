@@ -3,10 +3,12 @@
 <head>
     <title>@yield('title')</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=devic-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') }}
+    {{ HTML::style('src/css/sweetalert.css') }}
     {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}
-    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js') }}
+    {{ HTML::script('src/js/jquery-2.2.3.min.js') }}
+    {{ HTML::script('src/js/sweetalert.min.js') }}
 </head>
 <body>
 <nav class="navbar navbar-default">

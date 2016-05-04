@@ -3,7 +3,28 @@
     Lista de Tarefas
 @endsection
 @section('content')
-    <table class="table">
+    <script>
+        function confirm(id)
+        {
+            swal({
+                title: "Excluir",
+                text: "Confirma a exclusão da tarefa?",
+                type: "error",
+                showCancelButton: true,
+                confirmButtonText: "Sim",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            }), function (isConfirm) {
+                if(isConfirm){
+                    alert('Confirmado');
+                } else{
+                    alert('Cancelado');
+                }
+            }
+        }
+    </script>
+     <table class="table">
         <thead>
             <tr>
                 <th> Tarefa </th>
@@ -23,9 +44,9 @@
                     <td> {!! $task->description !!}</td>
                     <td> {!! $task->status !!}</td>
                     <td>
-                        <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"></i>  Editar</a>
+                        <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"> </i> Editar</a>
                         {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i> Excluir', ['class'=>'btn btn-danger', 'role'=>'button', 'type'=>'submmit']) !!}
+                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i>Excluir', ['class'=>'btn btn-danger', 'role'=>'button', 'onsubmit'=>'confirm()','type'=>'submmit']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>
