@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3eb5b183-8adc-480a-aeb0-e622745503ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/tasks/edit.blade.php" />
-    </list>
+    <list default="true" id="3eb5b183-8adc-480a-aeb0-e622745503ef" name="Default" comment="" />
     <ignored path="todolist.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -226,12 +222,12 @@
       <workItem from="1462309441635" duration="1255000" />
       <workItem from="1462310868712" duration="1753000" />
       <workItem from="1462315193299" duration="1317000" />
-      <workItem from="1462366039870" duration="12027000" />
+      <workItem from="1462366039870" duration="12621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33946000" />
+    <option name="totallyTimeSpent" value="34540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
