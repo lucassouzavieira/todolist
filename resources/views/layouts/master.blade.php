@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') }}
-    {{ HTML::style('src/css/sweetalert.css') }}
+    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
+    @yield('aditional')
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -35,9 +36,8 @@
         <p class="text-muted">Developed by Lucas Souza</p>
     </div>
 </footer>
+{{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}
 @section('scripts')
-    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
-    {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') }}
 @show
 </body>
 </html>
