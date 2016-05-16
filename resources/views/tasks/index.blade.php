@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('aditional')
-    {!! HTML::style('src/css/sweetalert.css') !!}}
+    {!! HTML::style('src/css/sweetalert.css') !!}
 @endsection
 @section('title')
     Lista de Tarefas
@@ -46,6 +46,7 @@
      <script type="text/javascript">
         $('.btn-excluir').click(function excludeAlert(e){
             e.preventDefault();
+            var btn = $(this); // Captura o botão que foi clicado
             swal({
                         title: "Exclusão de Tarefa",
                         text: "Você deseja realmente excluir a tarefa?",
@@ -59,9 +60,8 @@
                     },
                     function(isConfirm){
                         if (isConfirm){
-                            swal("Excluindo Tarefa", "Tarefa excluida com sucesso!", "success");
-
-                            // Continuar eventor
+                            // Continuar evento
+                            btn.closest('form').trigger("submit");
                         }
                     })
         });
