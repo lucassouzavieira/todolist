@@ -26,9 +26,9 @@
                     <td> {!! $task->description !!}</td>
                     <td>
                         @if($task->status  == "Feita")
-                            {!! Form::checkbox('status', 'Feita', true, ['class'=>'form-control', 'disabled'=>'disabled']) !!}
+                            {!! Form::checkbox('status', 'Feita', true, ['class'=>'form-control']) !!}
                         @else
-                            {!! Form::checkbox('status', 'Fazendo', false, ['class'=>'form-control', 'disabled'=>'disabled']) !!}
+                            {!! Form::checkbox('status', 'Fazendo', false, ['class'=>'form-control']) !!}
                         @endif
                     </td>
                     <td>
