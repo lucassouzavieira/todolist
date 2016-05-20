@@ -26,9 +26,9 @@
                     <td> {!! $task->description !!}</td>
                     <td>
                         @if($task->status  == "Feita")
-                            {!! Form::checkbox('status', 'Feita', true, ['class'=>'form-control']) !!}
+                            {!! Form::checkbox('status', $task->id, true, ['class'=>'form-control done'])!!}
                         @else
-                            {!! Form::checkbox('status', 'Fazendo', false, ['class'=>'form-control']) !!}
+                            {!! Form::checkbox('status', $task->id, false, ['class'=>'form-control done']) !!}
                         @endif
                     </td>
                     <td>
@@ -63,8 +63,40 @@
                             // Continuar evento
                             btn.closest('form').trigger("submit");
                         }
-                    })
+                    });
         });
+/*
+        $('.done').click(function clicked(e) {
+            console.log('Teste');
+            var id = $(this).val(); // Pega a id da task
+            var url = "/task/updt/" + id.toString();
+            console.log(url);
+            $.post( url );
+            //location.reload();
+        }); */
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+         $(".done").click(function update(){
+            var url = "/task/updt/" + $(this).val();
+             $.ajax({
+                 url: url,
+                 type: "POST",
+                 data: {},
+                 success: function () {
+                     console.log('Sucesso');
+                 },
+                 error: function () {
+                     console.log('Erro');
+                 }
+             });
+             location.reload();
+         });
+
     </script>
 @endsection
 @section('scripts')

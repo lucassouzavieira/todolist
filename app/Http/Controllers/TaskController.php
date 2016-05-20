@@ -111,6 +111,25 @@ class TaskController extends Controller
     }
 
     /**
+     * Atualiza via jQuery, recebendo um JSON
+     */
+    public function updateJQuery(Request $request, $id)
+    {
+        $task = Task::find($id);
+        //if($task == null) return redirect('task');
+        if($task->status === "Fazendo" || $task->status === "A fazer"){
+            $task->status = "Feita";
+            $task->save();
+            return redirect('task');
+        } else {
+            $task->status = "Fazendo";
+            $task->save();
+            return redirect('task');
+        }
+        return "Erro na requisição !";
+    }
+    
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

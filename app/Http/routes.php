@@ -16,3 +16,5 @@ Route::get('/', function(){
 });
 
 Route::resource('task', 'TaskController');
+
+Route::post('/task/updt/{task}', 'TaskController@updateJQuery');
