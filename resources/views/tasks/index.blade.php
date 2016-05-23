@@ -7,7 +7,7 @@
     Lista de Tarefas
 @endsection
 @section('aditional-navbar')
-    {!! Form::open(['method'=>'GET','url'=>'/task/search/','class'=>'navbar-form navbar-right','role'=>'search'])  !!}
+    {!! Form::open(['method'=>'GET','url'=>'/task/search/{}','class'=>'navbar-form navbar-right','role'=>'search'])  !!}
     <div class="input-group custom-search-form">
         <input type="text" class="form-control" name="search" placeholder="Buscar Tarefa">
     <span class="input-group-btn">
