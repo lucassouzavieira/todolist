@@ -17,4 +17,5 @@ Route::get('/', function(){
 
 Route::resource('task', 'TaskController');
 
-Route::post('/task/updt/{task}', 'TaskController@updateJQuery');
+Route::post('/task/update/{task}', 'TaskController@updateJQuery');
+Route::get('/task/search/{search?}', 'TaskController@search');

@@ -1,9 +1,22 @@
 @extends('layouts.master')
 @section('aditional')
     {!! HTML::style('src/css/sweetalert.css') !!}
+    {!! HTML::style('src/css/indexStyle.css') !!}
 @endsection
 @section('title')
     Lista de Tarefas
+@endsection
+@section('aditional-navbar')
+    {!! Form::open(['method'=>'GET','url'=>'/task/search/','class'=>'navbar-form navbar-right','role'=>'search'])  !!}
+    <div class="input-group custom-search-form">
+        <input type="text" class="form-control" name="search" placeholder="Buscar Tarefa">
+    <span class="input-group-btn">
+        <button class="btn btn-default-sm" type="submit">
+            <i class="glyphicon glyphicon-search"><!--<span class="hiddenGrammarError" pre="" data-mce-bogus="1"--> </i>
+        </button>
+    </span>
+    </div>
+    {!! Form::close() !!}
 @endsection
 @section('content')
      <table class="table">
@@ -42,8 +55,8 @@
         </tbody>
         <td><a class="btn btn-success" href="/task/create"><i class="glyphicon glyphicon-plus"></i> Adicionar nova tarefa</a></td>
     </table>
-
-     <script type="text/javascript">
+    {!! $tasks->links() !!}
+    <script type="text/javascript">
         $('.btn-excluir').click(function excludeAlert(e){
             e.preventDefault();
             var btn = $(this); // Captura o botão que foi clicado
@@ -82,7 +95,7 @@
         });
 
          $(".done").click(function update(){
-            var url = "/task/updt/" + $(this).val();
+            var url = "/task/update/" + $(this).val();
              $.ajax({
                  url: url,
                  type: "POST",
@@ -94,7 +107,7 @@
                      console.log('Erro');
                  }
              });
-             location.reload();
+             //location.reload();
          });
 
     </script>

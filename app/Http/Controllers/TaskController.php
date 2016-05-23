@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -17,8 +18,22 @@ class TaskController extends Controller
      */
     public function index()
     {
+        /*
         $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
+        */
+        $tasks = DB::table('tasks')->paginate(4);
+        return view('tasks.index', ['tasks' => $tasks]);
+    }
+
+    public function search(){
+        $search = \Request::get('search');
+        if($search){
+            //dd($search);
+            $tasks = Task::where('title', 'like', '%'.$search.'%')->orderBy('title')->paginate(4);
+            return view('tasks.index', ['tasks' => $tasks]);
+        }
+        return redirect('task');
     }
 
     /**
