@@ -22,15 +22,24 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
         */
-        $tasks = DB::table('tasks')->paginate(4);
+        $order = \Request::get('order');
+        if($order){
+            $tasks = DB::table('tasks')->OrderBy('title', $order)->paginate(5);
+            return view('tasks.index', ['tasks' => $tasks]);
+        }
+        $tasks = DB::table('tasks')->paginate(5);
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
     public function search(){
-        $search = \Request::get('search');
+        $search = \Request::get('busca');
+        $order = \Request::get('task');
         if($search){
-            //dd($search);
-            $tasks = Task::where('title', 'like', '%'.$search.'%')->orderBy('title')->paginate(4);
+            if($order){
+                $tasks = Task::where('title', 'like', '%'.$search.'%')->OrderBy('title', $order)->paginate(5);
+                return view('tasks.index', ['tasks' => $tasks]);
+            }
+            $tasks = Task::where('title', 'like', '%'.$search.'%')->paginate(5);
             return view('tasks.index', ['tasks' => $tasks]);
         }
         return redirect('task');

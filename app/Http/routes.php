@@ -15,7 +15,12 @@ Route::get('/', function(){
     return view('welcome');
 });
     
-Route::resource('task', 'TaskController');
-
+Route::get('/task', 'TaskController@index');
+Route::get('/task/create', 'TaskController@create');
+Route::get('/task/search', 'TaskController@search');
+Route::get('/task/{task}', 'TaskController@show');
+Route::get('/task/{task}/edit', 'TaskController@edit');
+Route::put('/task/{task}', 'TaskController@update');
+Route::delete('/task/{task}', 'TaskController@destroy');
 Route::post('/task/update/{task}', 'TaskController@updateJQuery');
-Route::get('/task/search/{search}', 'TaskController@search');
+Route::post('/task', 'TaskController@store');
