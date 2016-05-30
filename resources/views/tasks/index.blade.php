@@ -22,7 +22,7 @@
      <table class="table">
         <thead>
             <tr>
-                <th> Tarefa </th>
+                <th><button role="button" class="btn btn-link btn-ordena">Tarefa</button></th>
                 <th> Descrição </th>
                 <th> Status </th>
                 <th> Opções </th>
@@ -78,15 +78,6 @@
                         }
                     });
         });
-/*
-        $('.done').click(function clicked(e) {
-            console.log('Teste');
-            var id = $(this).val(); // Pega a id da task
-            var url = "/task/updt/" + id.toString();
-            console.log(url);
-            $.post( url );
-            //location.reload();
-        }); */
 
         $.ajaxSetup({
             headers: {
@@ -110,6 +101,35 @@
              //location.reload();
          });
 
+        $(".btn-ordena").click(function updateparameter() {
+            var url = window.location.href;
+            var parametro = 'asc';
+            if(url.indexOf('?order=') > 0){
+                if(url.match(/asc/)){
+                    parametro = 'desc';
+                } else {
+                    parametro = 'asc';
+                }
+                url = url.replace(url.substring(url.indexOf('?order='), url.length), '');
+                url = url + '?order=' + parametro;
+
+            } else if(url.indexOf('&order=') > 0){
+                if(url.match(/asc/)){
+                    parametro = 'desc';
+                } else {
+                    parametro = 'asc';
+                }
+                url = url.replace(url.substring(url.indexOf('&order='), url.length), '');
+                url = url + '&order=' + parametro;
+            } else {
+                if(url.match(/\?[a-zA-Z]+/)){
+                    url = url + '&order=' + parametro;
+                } else{
+                    url = url + '?order=' + parametro;
+                }
+            }
+            $(window.location).attr('href', url);
+        });
     </script>
 @endsection
 @section('scripts')

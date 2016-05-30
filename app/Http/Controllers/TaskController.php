@@ -33,7 +33,7 @@ class TaskController extends Controller
 
     public function search(){
         $search = \Request::get('busca');
-        $order = \Request::get('task');
+        $order = \Request::get('order');
         if($search){
             if($order){
                 $tasks = Task::where('title', 'like', '%'.$search.'%')->OrderBy('title', $order)->paginate(5);
