@@ -18,10 +18,6 @@ class TaskController extends Controller
      */
     public function index()
     {
-        /*
-        $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
-        */
         $order = \Request::get('order');
         if($order){
             $tasks = DB::table('tasks')->OrderBy('title', $order)->paginate(5);

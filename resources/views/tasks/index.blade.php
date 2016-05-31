@@ -19,39 +19,39 @@
     {!! Form::close() !!}
 @endsection
 @section('content')
-     <table class="table">
+    <table class="table">
         <thead>
-            <tr>
-                <th><button role="button" class="btn btn-link btn-ordena">Tarefa</button></th>
-                <th> Descrição </th>
-                <th> Status </th>
-                <th> Opções </th>
-            </tr>
+        <tr>
+            <th><button role="button" class="btn btn-link btn-ordena">Tarefa</button></th>
+            <th> Descrição </th>
+            <th> Status </th>
+            <th> Opções </th>
+        </tr>
         </thead>
         <tbody>
-            @foreach($tasks as $task)
-                <tr>
-                    <td>
-                        {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'GET')) !!}
-                             {!! Form::submit($task->title, array('class'=>'btn-link')) !!}
-                        {!! Form::close() !!}
-                    </td>
-                    <td> {!! $task->description !!}</td>
-                    <td>
-                        @if($task->status  == "Feita")
-                            {!! Form::checkbox('status', $task->id, true, ['class'=>'form-control done'])!!}
-                        @else
-                            {!! Form::checkbox('status', $task->id, false, ['class'=>'form-control done']) !!}
-                        @endif
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"> </i> Editar</a>
-                        {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
-                            {!! Form::button('<i class="glyphicon glyphicon-remove"></i>Excluir', ['class'=>'btn btn-danger btn-excluir', 'role'=>'button','type'=>'submit']) !!}
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-            @endforeach
+        @foreach($tasks as $task)
+            <tr>
+                <td>
+                    {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'GET')) !!}
+                    {!! Form::submit($task->title, array('class'=>'btn-link')) !!}
+                    {!! Form::close() !!}
+                </td>
+                <td> {!! $task->description !!}</td>
+                <td>
+                    @if($task->status  == "Feita")
+                        {!! Form::checkbox('status', $task->id, true, ['class'=>'form-control done'])!!}
+                    @else
+                        {!! Form::checkbox('status', $task->id, false, ['class'=>'form-control done']) !!}
+                    @endif
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="/task/{{$task->id}}/edit"><i class="glyphicon glyphicon-pencil"> </i> Editar</a>
+                    {!! Form::open(array('url' => "task/{$task->id}", 'method' => 'DELETE')) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-remove"></i>Excluir', ['class'=>'btn btn-danger btn-excluir', 'role'=>'button','type'=>'submit']) !!}
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
         </tbody>
         <td><a class="btn btn-success" href="/task/create"><i class="glyphicon glyphicon-plus"></i> Adicionar nova tarefa</a></td>
     </table>
@@ -85,21 +85,21 @@
             }
         });
 
-         $(".done").click(function update(){
+        $(".done").click(function update(){
             var url = "/task/update/" + $(this).val();
-             $.ajax({
-                 url: url,
-                 type: "POST",
-                 data: {},
-                 success: function () {
-                     console.log('Sucesso');
-                 },
-                 error: function () {
-                     console.log('Erro');
-                 }
-             });
-             //location.reload();
-         });
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {},
+                success: function () {
+                    console.log('Sucesso');
+                },
+                error: function () {
+                    console.log('Erro');
+                }
+            });
+            //location.reload();
+        });
 
         $(".btn-ordena").click(function updateparameter() {
             var url = window.location.href;
@@ -127,6 +127,22 @@
                 } else{
                     url = url + '?order=' + parametro;
                 }
+            }
+            $(window.location).attr('href', url);
+        });
+
+        $('.pagination li a').click(function updateurl(e){
+            e.preventDefault();
+            var url = window.location.href;
+            var elementUrl = $(this).attr('href');
+            elementUrl = elementUrl.replace(elementUrl.substring(0, elementUrl.indexOf('page')), '');
+            if(url.indexOf('?') > 0){
+                if(url.match(/page=[0-9]+/)){
+                    url.replace(/page=[0-9]+/, elementUrl);
+                }
+                url = url + '&' + elementUrl;
+            } else {
+                url = url + '?' + elementUrl;
             }
             $(window.location).attr('href', url);
         });
