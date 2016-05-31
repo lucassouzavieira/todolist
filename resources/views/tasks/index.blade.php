@@ -136,11 +136,13 @@
             var url = window.location.href;
             var elementUrl = $(this).attr('href');
             elementUrl = elementUrl.replace(elementUrl.substring(0, elementUrl.indexOf('page')), '');
+            console.log(elementUrl);
             if(url.indexOf('?') > 0){
-                if(url.match(/page=[0-9]+/)){
-                    url.replace(/page=[0-9]+/, elementUrl);
+                if(url.match(/page=[0-9]/)){
+                    url = url.replace(/page=[0-9]/, elementUrl);
+                } else {
+                    url = url + '&' + elementUrl;
                 }
-                url = url + '&' + elementUrl;
             } else {
                 url = url + '?' + elementUrl;
             }

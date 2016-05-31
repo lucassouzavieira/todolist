@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3eb5b183-8adc-480a-aeb0-e622745503ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tasks/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tasks/index.blade.php" />
     </list>
     <ignored path="todolist.iws" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tasks/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="146" column="12" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
+            <state relative-caret-position="254">
+              <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -195,12 +193,12 @@
       <workItem from="1464030356976" duration="6000" />
       <workItem from="1464030456810" duration="121000" />
       <workItem from="1464031080023" duration="225000" />
-      <workItem from="1464715808947" duration="1414000" />
+      <workItem from="1464715808947" duration="2092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52236000" />
+    <option name="totallyTimeSpent" value="52914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -627,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tasks/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="146" column="12" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
+        <state relative-caret-position="254">
+          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
           <folding />
         </state>
       </provider>
